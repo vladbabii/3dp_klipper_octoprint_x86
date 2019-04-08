@@ -149,6 +149,15 @@ then restart klipper
 service klipper restart
 ```
 
+
+For Arduino Mega, an options is:
+```
+# lsusb
+# Bus 001 Device 005: ID 2341:0042 Arduino SA Mega 2560 R3 (CDC ACM)
+echo "SUBSYSTEM==\"tty\", ATTRS{idVendor}==\"2341\", ATTRS{idProduct}==\"0042\", SYMLINK+=\"printerserial\", RUN+=\"/opt/action-onplug/auto.sh\"" > /etc/udev/rules.d/99-printerserial.rules
+```
+
+
 # - map multiple serial devices to multiple fixed /dev/-something-s (TODO)
 
 
