@@ -50,3 +50,13 @@ sed -i "s/UMASK=022/UMASK=000/g" /etc/default/octoprint
 update-rc.d octoprint defaults
 ```
 
+In Settings > Commands, configure the following commands:
+- Restart OctoPrint: sudo service octoprint restart
+- Restart system: sudo shutdown -r now
+- Shutdown system: sudo shutdown -h now
+
+# Octoprint allow access to shutdown and service command command
+```
+echo "octopus ALL=NOPASSWD: /sbin/shutdown" > /etc/sudoers.d/octoprint-shutdown
+echo "octopus ALL=NOPASSWD: /usr/sbin/service" > /etc/sudoers.d/octoprint-service
+```
