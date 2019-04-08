@@ -85,6 +85,7 @@ sed -i 's/KLIPPER_USER="octoprint"/KLIPPER_USER="octopus"/g' ./scripts/install-c
 
 # Build micro-controller firmware
 ```
+cd /opt/klipper/
 make menuconfig 
 make
 ```
@@ -92,6 +93,7 @@ make
 # Flash micro-controller (manual step)
 ```
 service klipper stop
+cd /opt/klipper/
 make flash FLASH_DEVICE=/dev/serial/by-id/...
 service klipper start
 ```
