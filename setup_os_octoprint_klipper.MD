@@ -133,7 +133,7 @@ Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ```
 copy the id (1d6b:0002 in this case and replace it in the command below)
 ```
-echo "SUBSYSTEM==\"tty\", ATTRS{idVendor}==\"1d6b\", ATTRS{idProduct}==\"0002\", SYMLINK+=\"printerserial\", RUN+=\"/opt/action-onplug/auto.sh\"" > /etc/udev/rules.d/99-zwave-stick.rules
+echo "SUBSYSTEM==\"tty\", ATTRS{idVendor}==\"1d6b\", ATTRS{idProduct}==\"0002\", SYMLINK+=\"printerserial\", RUN+=\"/opt/action-onplug/auto.sh\"" > /etc/udev/rules.d/99-printerserial.rules
 ```
 - unplug device
 - plug device back in and you should see the serial with
