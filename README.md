@@ -85,9 +85,12 @@ make menuconfig
 make
 ```
 
-# Flash micro-controller (manual step
+# Flash micro-controller (manual step)
 ```
 service klipper stop
 make flash FLASH_DEVICE=/dev/serial/by-id/...
 service klipper start
 ```
+
+# Octoprint install klipper plugin (manual step)
+- go to settings > plugin manager > search for klipper > install octoklipper > restart 
