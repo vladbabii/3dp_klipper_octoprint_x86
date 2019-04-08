@@ -28,16 +28,25 @@ pip install pip --upgrade
 pip install https://get.octoprint.org/latest
 ```
 
-# Configure octoprint
-```
-
-```
-
-# Octoprint automatic startup
+# Octoprint automatic startup files
 ```
 wget https://github.com/foosel/OctoPrint/raw/master/scripts/octoprint.init && mv octoprint.init /etc/init.d/octoprint
 wget https://github.com/foosel/OctoPrint/raw/master/scripts/octoprint.default && mv octoprint.default /etc/default/octoprint
 chmod +x /etc/init.d/octoprint
+```
+
+# Configure octoprint default settings
+```
+cp /etc/default/octoprint /home/octopus/etc.default.octoprint
+sed -i "s/pi/octopus/g" /etc/default/octoprint
+sed -i "s/#BASEDIR=/BASEDIR=/g" /etc/default/octoprint
+sed -i "s/#CONFIGFILE=/CONFIGFILE=/g" /etc/default/octoprint
+sed -i "s/#DAEMON=\/home\/octopus\/OctoPrint\/venv\/bin\/octoprint/DAEMON=\/opt\/octoprint\/venv\/bin\/octoprint/g" /etc/default/octoprint
+sed -i "s/UMASK=022/UMASK=000/g" /etc/default/octoprint
+```
+
+# Octoprint automatic enable
+```
 update-rc.d octoprint defaults
 ```
 
