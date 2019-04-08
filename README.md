@@ -140,6 +140,10 @@ echo "SUBSYSTEM==\"tty\", ATTRS{idVendor}==\"1d6b\", ATTRS{idProduct}==\"0002\",
 ```
 ls /dev/printerserial
 ```
+now modify */home/octopus/printer.cfg* and set 
+```
+serial: /dev/printerserial
+```
 
 # - map multiple serial devices to multiple fixed /dev/-something-s (TODO)
 
