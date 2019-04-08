@@ -55,8 +55,12 @@ In Settings > Commands, configure the following commands:
 - Restart system: sudo shutdown -r now
 - Shutdown system: sudo shutdown -h now
 
-# Octoprint allow access to shutdown and service command command
+# Octoprint allow access to shutdown command
 ```
 echo "octopus ALL=NOPASSWD: /sbin/shutdown" > /etc/sudoers.d/octoprint-shutdown
+```
+
+# Octoprint allow access to service command
+```
 echo "octopus ALL=NOPASSWD: /usr/sbin/service" > /etc/sudoers.d/octoprint-service
 ```
