@@ -27,3 +27,17 @@ source venv/bin/activate
 pip install pip --upgrade
 pip install https://get.octoprint.org/latest
 ```
+
+# Configure octoprint
+```
+
+```
+
+# Octoprint automatic startup
+```
+wget https://github.com/foosel/OctoPrint/raw/master/scripts/octoprint.init && mv octoprint.init /etc/init.d/octoprint
+wget https://github.com/foosel/OctoPrint/raw/master/scripts/octoprint.default && mv octoprint.default /etc/default/octoprint
+chmod +x /etc/init.d/octoprint
+update-rc.d octoprint defaults
+```
+
