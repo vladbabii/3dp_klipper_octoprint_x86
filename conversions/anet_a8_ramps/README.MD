@@ -31,3 +31,21 @@ echo:  M301 P20.09 I1.12 D90.14
 echo:Z-Probe Offset (mm):
 echo:  M851 Z-34.26
 ```
+
+servo when stowed
+```
+M402
+M280 P0
+
+echo: Servo 0: 70
+ok
+```
+
+servo when dropped down
+```
+M401
+M280 P0
+
+echo: Servo 0: 160
+ok
+```
