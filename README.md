@@ -74,5 +74,7 @@ cd /opt/klipper
 su octopus
 git clone https://github.com/KevinOConnor/klipper .
 exit
-./scripts/install-ubuntu-18.04.sh
+cp ./scripts/install-ubuntu-18.04.sh ./scripts/install-custom.sh
+sed -i 's/KLIPPER_USER="octoprint"/KLIPPER_USER="octopus"/g' ./scripts/install-custom.sh
+./scripts/install-custom.sh
 ```
