@@ -1,11 +1,17 @@
 # Install Klipper and Octoprint On Lubuntu
 
+- all commands are run starting with root in each section
+
 create user named octopus
 ```
 useradd octopus
 mkdir /home/octopus
 chmod -R 755 /home/octopus
 chown -R octopus:octopus /home/octopus
+usermod -s /bin/bash octopus
+passwd -d octopus
+usermod -a -G tty octopus
+usermod -a -G dialout octopus
 ```
 
 install octoprint
@@ -15,6 +21,7 @@ apt install python-pip python-dev python-setuptools python-virtualenv git libyam
 mkdir /opt/octoprint
 chmod -R 777 /opt/octoprint
 cd /opt/octoprint
+su octopus
 virtualenv venv
 source venv/bin/activate
 pip install pip --upgrade
