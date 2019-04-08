@@ -2,7 +2,7 @@
 
 - all commands are run starting with root in each section
 
-create user named octopus
+# Create user octopus
 ```
 useradd octopus
 mkdir /home/octopus
@@ -14,7 +14,7 @@ usermod -a -G tty octopus
 usermod -a -G dialout octopus
 ```
 
-install octoprint
+# Install octoprint
 ```
 apt update
 apt install python-pip python-dev python-setuptools python-virtualenv git libyaml-dev build-essential
