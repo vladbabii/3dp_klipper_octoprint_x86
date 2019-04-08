@@ -144,10 +144,11 @@ now modify */home/octopus/printer.cfg* and set
 ```
 serial: /dev/printerserial
 ```
+then restart klipper
+```
+service klipper restart
+```
 
 # - map multiple serial devices to multiple fixed /dev/-something-s (TODO)
-
-
-
 
 
