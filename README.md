@@ -96,12 +96,54 @@ make flash FLASH_DEVICE=/dev/serial/by-id/...
 service klipper start
 ```
 
-# Octoprint install klipper plugin (manual step)
-- go to settings > plugin manager > search for klipper > install octoklipper > restart 
-
 # Copy printer config file to home folder and restart klipper
+# !! CHANGE generic-ramps.cfg to whatever is best for you !!
 ```
 su octopus
 cp /opt/klipper/config/generic-ramps.cfg /home/octopus/printer.cfg
+exit
 service klipper restart
 ```
+
+# Octoprint install klipper plugin (manual step)
+- go to settings > plugin manager > search for klipper > install octoklipper
+- restart octoprint
+- go to settings > octoklipper > basic > klipper config path = "/home/octopus/printer.cfg"
+- restart octoprint
+
+# Setup the serial port to always mount to the same path (less hassle when plugging/unplugging stuff)
+
+# - create automation on serial connect, if needed (optional)
+```
+mkdir -p /opt/action-onplug
+touch /opt/action-onplug/auto.sh
+chmod +x /opt/action-onplug/auto.sh
+chmod -R 755 /opt/action-onplug
+chown -R octopus:octopus /opt/action-onplug
+```
+
+# - map serial to static /dev/-something- (in this example printerserial) by usb device id
+use
+```
+lsusb
+```
+and you'll see a list, then plugin device then run that again. A new device should have popped up, something like (but different names)
+```
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+```
+copy the id (1d6b:0002 in this case and replace it in the command below)
+```
+echo "SUBSYSTEM==\"tty\", ATTRS{idVendor}==\"1d6b\", ATTRS{idProduct}==\"0002\", SYMLINK+=\"printerserial\", RUN+=\"/opt/action-onplug/auto.sh\"" > /etc/udev/rules.d/99-zwave-stick.rules
+```
+- unplug device
+- plug device back in and you should see the serial with
+```
+ls /dev/printerserial
+```
+
+# - map multiple serial devices to multiple fixed /dev/-something-s (TODO)
+
+
+
+
+
