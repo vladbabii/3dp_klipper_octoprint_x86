@@ -78,3 +78,16 @@ cp ./scripts/install-ubuntu-18.04.sh ./scripts/install-custom.sh
 sed -i 's/KLIPPER_USER="octoprint"/KLIPPER_USER="octopus"/g' ./scripts/install-custom.sh
 ./scripts/install-custom.sh
 ```
+
+# Build micro-controller firmware
+```
+make menuconfig 
+make
+```
+
+# Flash micro-controller (manual step
+```
+service klipper stop
+make flash FLASH_DEVICE=/dev/serial/by-id/...
+service klipper start
+```
