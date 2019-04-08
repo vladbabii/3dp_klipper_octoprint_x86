@@ -73,5 +73,6 @@ chown -R octopus:octopus /opt/klipper
 cd /opt/klipper
 su octopus
 git clone https://github.com/KevinOConnor/klipper .
-./klipper/scripts/install-ubuntu-18.04.sh
+exit
+./scripts/install-ubuntu-18.04.sh
 ```
