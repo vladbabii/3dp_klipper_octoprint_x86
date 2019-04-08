@@ -9,9 +9,13 @@ mkdir /home/octopus
 chmod -R 755 /home/octopus
 chown -R octopus:octopus /home/octopus
 usermod -s /bin/bash octopus
-passwd -d octopus
 usermod -a -G tty octopus
 usermod -a -G dialout octopus
+```
+
+# Set password to octopus user
+```
+passwd octopus
 ```
 
 # Install octoprint
@@ -94,3 +98,10 @@ service klipper start
 
 # Octoprint install klipper plugin (manual step)
 - go to settings > plugin manager > search for klipper > install octoklipper > restart 
+
+# Copy printer config file to home folder and restart klipper
+```
+su octopus
+cp /opt/klipper/config/generic-ramps.cfg /home/octopus/printer.cfg
+service klipper restart
+```
