@@ -64,3 +64,14 @@ echo "octopus ALL=NOPASSWD: /sbin/shutdown" > /etc/sudoers.d/octoprint-shutdown
 ```
 echo "octopus ALL=NOPASSWD: /usr/sbin/service" > /etc/sudoers.d/octoprint-service
 ```
+
+# Prepare klipper files
+```
+mkdir /opt/klipper
+chmod -R 777 /opt/klipper
+chown -R octopus:octopus /opt/klipper
+cd /opt/klipper
+su octopus
+git clone https://github.com/KevinOConnor/klipper .
+./klipper/scripts/install-ubuntu-18.04.sh
+```
