@@ -24,7 +24,7 @@ position_min: -20
 position_endstop: -20
 ```
 
-# Read & apply [bed leveling guide](https://github.com/KevinOConnor/klipper/blob/master/docs/Bed_Level.md)
+# Read & apply [bed leveling guide](https://github.com/KevinOConnor/klipper/blob/master/docs/Bed_Level.md) especially the [probe calibration](https://github.com/KevinOConnor/klipper/blob/master/docs/Probe_Calibrate.md)
 
 
 # Read [slicers related document](https://github.com/KevinOConnor/klipper/blob/master/docs/Slicers.md)
