@@ -54,7 +54,29 @@ Use any marlin calibration tutorial, and you get a value H. You need to do (1/H)
 [extruder]
 step_distance: .01
 ```
+math:
+```
 
+todo: move 100
+left: 16.17
+done: 103.83
+
+klipper ex steps: .01
+marlin steps per unit: 100
+
+100 X 100 = 10000
+
+y x 103.83 = 10000
+
+y = 10000 / 103.83
+
+y = 96.31127805065973
+
+
+marlin steps per unit: y 96.31127805065973
+
+klipper ex steps: 1/y = 1 / 96.31127805065973
+```
 
 
 # Read [slicers related document](https://github.com/KevinOConnor/klipper/blob/master/docs/Slicers.md)
