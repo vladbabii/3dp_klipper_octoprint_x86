@@ -56,5 +56,5 @@ step_distance: .01
 ```
 
 
-command to printer
+
 # Read [slicers related document](https://github.com/KevinOConnor/klipper/blob/master/docs/Slicers.md)
