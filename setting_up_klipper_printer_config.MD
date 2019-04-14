@@ -26,6 +26,8 @@ position_endstop: -20
 
 # Read & apply [bed leveling guide](https://github.com/KevinOConnor/klipper/blob/master/docs/Bed_Level.md) especially the [probe calibration](https://github.com/KevinOConnor/klipper/blob/master/docs/Probe_Calibrate.md)
 
+* probe calibration
+
 First, heat up the bed and nozzle to normal printing temperature, and home the printer.
 
 Then run this to start probe z calibration
@@ -44,5 +46,15 @@ Then, when you're satisfied, send
 ```
 ACCEPT
 ```
+
+* extruder calibration
+
+Use any marlin calibration tutorial, and you get a value H. You need to do (1/H) and put the value in your extruder config on
+```
+[extruder]
+step_distance: .01
+```
+
+
 command to printer
 # Read [slicers related document](https://github.com/KevinOConnor/klipper/blob/master/docs/Slicers.md)
