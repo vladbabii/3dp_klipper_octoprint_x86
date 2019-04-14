@@ -26,5 +26,23 @@ position_endstop: -20
 
 # Read & apply [bed leveling guide](https://github.com/KevinOConnor/klipper/blob/master/docs/Bed_Level.md) especially the [probe calibration](https://github.com/KevinOConnor/klipper/blob/master/docs/Probe_Calibrate.md)
 
+First, heat up the bed and nozzle to normal printing temperature, and home the printer.
 
+Then run this to start probe z calibration
+```
+PROBE_CALIBRATE 
+```
+then use the testz command and a piece of paper to calibrate nozzle height, either raising the printhead
+```
+TESTZ Z=+.1
+```
+or lowering it
+```
+TESTZ Z=-.1
+```
+Then, when you're satisfied, send 
+```
+ACCEPT
+```
+command to printer
 # Read [slicers related document](https://github.com/KevinOConnor/klipper/blob/master/docs/Slicers.md)
