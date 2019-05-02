@@ -22,3 +22,8 @@ rm -rf Adafruit-GPIO-Halt-master
 		sed -i "s/^exit 0/\/usr\/local\/bin\/gpio-halt $HALT_PIN \&\\nexit 0/g" /etc/rc.local >/dev/null
 	fi
 ```
+
+
+
+raid1 storage
+* see https://blog.alexellis.io/hardened-raspberry-pi-nas/
