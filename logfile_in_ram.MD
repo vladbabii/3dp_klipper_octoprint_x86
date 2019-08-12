@@ -26,3 +26,18 @@ Restart klipper
 ```
 sudo systemctl restart klipper
 ```
+
+To rotate logs: create a new file at /etc/logrotate.d/klipper with content:
+```
+/opt/klipper.log/klippy.log {
+        rotate 0
+        daily
+        size 64m
+        nocreate
+        missingok
+}
+```
+
+More options for log rotation here: https://linux.die.net/man/8/logrotate
+
+For example change rotate to X to keep X last copies but make sure you have enough space in the ram disk
