@@ -1,3 +1,7 @@
+** Warning!!
+
+** you will lose all logs on reboot / power failure
+
 Create a folder on the pi
 ```
 sudo mkdir /opt/klipper.log
