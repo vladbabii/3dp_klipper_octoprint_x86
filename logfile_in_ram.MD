@@ -44,7 +44,9 @@ To rotate logs: create a new file at /etc/logrotate.d/klipper with content:
 More options for log rotation here: https://linux.die.net/man/8/logrotate
 
 For example change rotate to X to keep X last copies but make sure you have enough space in the ram disk
+
 ---
+
 Restart logrotate service
 ```
 systemctl restart logrotate
