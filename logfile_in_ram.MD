@@ -16,3 +16,13 @@ Edit klipper to write logs to new path: edit /etc/default/klipper and change the
 ```
 KLIPPY_ARGS="/opt/klipper/klippy/klippy.py /opt/klipper.hill/printer.cfg -l /opt/klipper.log/klippy.log"
 ```
+
+Mount the new filesystem
+```
+sudo mount -a
+```
+
+Restart klipper
+```
+sudo systemctl restart klipper
+```
