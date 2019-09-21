@@ -9,6 +9,7 @@
 - camera(s) to watch prints
 - ai to detect printing errors (like the octoprint plugin)
 - (external) mosfets with heatsinks / active cooling and maybe temperature sensors
+- for mains voltage beds - temperature-based fuse
 
 and since we automated for remote usage
 - automated nozzle cleaning after heatup / before start print
