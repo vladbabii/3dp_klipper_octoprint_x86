@@ -6,8 +6,13 @@ echo "Octoprint: connect"
 OCTOAPI="http://localhost:5000/api/"
 APIKEY="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 CONNECTION="connection"
+PRINTERCMD="printer/command"
 
 /usr/bin/curl -v -k -H "X-API-KEY: $APIKEY" -H "Content-Type: application/json" -d '{"command":"connect","port":"/tmp/printer"}' "$OCTOAPI$CONNECTION"
+
+sleep 3
+
+/usr/bin/curl -v -k -H "X-API-KEY: $APIKEY" -H "Content-Type: application/json" -d '{"command":"FIRMWARE_RESTART"}' "$OCTOAPI$PRINTERCMD"
 ```
 
 script to toggle pin on and off to toggle a relay state if the printer is not on
